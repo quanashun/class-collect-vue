@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+a {
+  text-decoration: none
+}
