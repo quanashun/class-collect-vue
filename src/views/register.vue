@@ -75,12 +75,7 @@ let register = function () {
         "phone": registerForm.userId,
         "username": registerForm.userName,
         "password": registerForm.password
-    }).catch(
-        () => {
-            ElMessage.error("注册请求发送失败，稍后重试");
-            return;
-        }
-    ).then(
+    }).then(
         (response) => {
             if(response.data.code == 0){
                 ElMessage.success("注册成功");
@@ -93,6 +88,11 @@ let register = function () {
                 ElMessage.error("用户已存在，请换个用户ID");
                 return;
             }
+        }
+    ).catch(
+        () => {
+            ElMessage.error("注册请求发送失败，稍后重试");
+            return;
         }
     )
 

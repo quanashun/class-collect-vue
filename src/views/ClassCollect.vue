@@ -27,9 +27,9 @@
 
 <script lang="ts" setup>
 import {Delete, Share} from "@element-plus/icons-vue";
-import {Action, ElMessage, ElMessageBox} from "element-plus";
+import {ElMessage, ElMessageBox} from "element-plus";
 import service from "../utils/request.ts";
-import {reactive, ref} from "vue";
+import {reactive} from "vue";
 import router from "../router";
 
 let currentRow = reactive<{
@@ -45,7 +45,7 @@ let currentRow = reactive<{
     "remark": "",
     "address": ""
 });
-let tableData = reactive([]);
+let tableData = reactive<any[]>([]);
 
 service.get("/schedule-collect-result/getOwnScheduleCollectTaskList").then(
     (response) => {
@@ -55,8 +55,8 @@ service.get("/schedule-collect-result/getOwnScheduleCollectTaskList").then(
             })
         }
     }
-).catch((error) => {
-    ElMessage.error("获取数据失败，稍后刷新重试")
+).catch(() => {
+    ElMessage.error("获取数据失败，请登录")
 })
 let deleteTask = function () {
     ElMessageBox.confirm(

@@ -188,7 +188,7 @@ let statisticsOneCellFulledNames = function (row, column) {
             drawer.value=true
         }
     ).catch(
-        (error)=>{
+        ()=>{
             ElMessage.error("获取名单失败");
             cellFulledNames = reactive<string[]>([]);
         }

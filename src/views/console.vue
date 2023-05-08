@@ -29,7 +29,8 @@ type UserInfo = {
 }
 
 let userInfo: UserInfo;
-if (JSON.parse(localStorage.getItem("login_user_info")) == null) {
+
+if (localStorage.getItem("login_user_info") == null) {
     router.push("/login")
 } else {
     userInfo = <UserInfo>JSON.parse(localStorage.getItem("login_user_info"));
